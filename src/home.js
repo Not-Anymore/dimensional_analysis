@@ -1,13 +1,13 @@
 import React from "react";
 import Select from "react-select";
 
-const aquaticCreatures = [
-  { label: "Shark", value: "Shark" },
-  { label: "Dolphin", value: "Dolphin" },
-  { label: "Whale", value: "Whale" },
-  { label: "Octopus", value: "Octopus" },
-  { label: "Crab", value: "Crab" },
-  { label: "Lobster", value: "Lobster" },
+const quantities = [
+  { label: "Density", value: "Density" },
+  { label: "Volume", value: "Volume" },
+  { label: "Force", value: "Force" },
+  { label: "Work", value: "Work" },
+  { label: "Energy", value: "Energy" },
+  { label: "Efficiency", value: "Efficiency" },
 ];
 
 const Home = () => {
@@ -18,11 +18,7 @@ const Home = () => {
       </div>
 
       <div className="row">
-        <Select options={aquaticCreatures} />
-      </div>
-
-      <div className="footer">
-        <p>This will be footer</p>
+        <Select options={quantities} className="select" />
       </div>
     </div>
   );
