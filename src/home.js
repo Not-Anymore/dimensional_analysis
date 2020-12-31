@@ -14,11 +14,14 @@ const Home = () => {
   return (
     <div>
       <div className="header">
-        <h2>Dimensional analysis Calculator</h2>
+        <h2>Dimensional Analysis Calculator</h2>
       </div>
 
       <div className="row">
         <Select options={quantities} className="select" />
+      </div>
+      <div className="solution">
+        <p>---For Your analysis---</p>
       </div>
     </div>
   );
