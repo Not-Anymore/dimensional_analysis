@@ -13,7 +13,10 @@ import axios from "axios";
 
 const Home = () => {
   const [quantity, setQuantity] = useState([]);
-  const [analysis, SetAnalysis] = useState([]);
+  const [analysis, SetAnalysis] = useState({});
+  const newAnalysis = (analysis) => {
+    SetAnalysis(analysis);
+  };
   const getQuantities = async () => {
     const response = await axios.get(
       `https://jsonplaceholder.typicode.com/posts`
@@ -21,14 +24,13 @@ const Home = () => {
     response.data.forEach((element) => {
       element.label = element.id;
     });
-    console.log(response.data[9]);
     setQuantity(response.data);
   };
   useEffect(() => {
     getQuantities(quantity);
   }, []);
   return (
-    <div>
+    <div className="container">
       <div className="header">
         <h2>Dimensional Analysis Calculator</h2>
       </div>
@@ -36,12 +38,12 @@ const Home = () => {
       <div className="row">
         <Select
           options={quantity}
-          onChange={(opt) => console.log(opt)}
+          onChange={(opt) => newAnalysis(opt)}
           className="select"
         />
       </div>
       <div className="solution">
-        <p>---For Your analysis---</p>
+        <p>{analysis.body || "---For Your analysis---"} </p>
       </div>
     </div>
   );
