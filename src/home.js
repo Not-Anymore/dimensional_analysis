@@ -43,10 +43,9 @@ const Home = () => {
         />
       </div>
       <div className="solution">
-        <p>{analysis.body || "---For Your analysis---"} </p>
+        <p>{analysis.body || "---Dimensional Analysis---"} </p>
       </div>
     </div>
   );
 };
-
 export default Home;
